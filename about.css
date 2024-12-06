@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Jolly+Lodger&display=swap');
+
+
+#ALLABOUTME {
+
+    font-size: 20px;
+    text-align: center; 
+
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+
+
+    color: white;
+}
+body, html {
+
+height: 100%; 
+margin: 0;
+background-image: url('img/bg2.jpg'); 
+background-size: cover;
+background-position: center center;
+
+}
+
+#title{
+    padding-top: 5%;
+}

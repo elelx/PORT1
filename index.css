@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Jolly+Lodger&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body, html {
+    height: 100%; 
+    margin: 0;
+    background-image: url('img/HowToTest3 copy.jpg'); 
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.container {
+    height: 100%; 
+    width: 100%;
+    position: relative; 
+}
+
+.text1 {
+    border-radius: 25px;
+
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 50px;
+    text-align: center; 
+
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: rgb(255, 89, 114);
+    width: 750px;
+    padding: 50px;
+    margin: 2px;
+
+    border: 15px solid white;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    
+}
+
+#menu {
+
+    color: white !important;
+
+    border-radius: 25px;
+
+    background-color: rgb(255, 213, 0);
+    width: 500px;
+    border: 10px solid white;
+    padding: 30px;
+    margin: 2px;
+
+}
+
+#menu div {
+    color: white;
+    flex-grow: 1;
+}
+
+#menu a {
+    color: white; /* Set the link text color to white */
+    text-decoration: none; /* Remove underline from links */
+}
+
+#menu a:hover {
+    color: rgb(255, 213, 0); /* Optional: change link color on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+}
+  
+#heh{
+    font-size:25px;
+}
+
+.overlapimg {
+    position: fixed; /* Keeps the image fixed relative to the viewport */
+    top: 40%; /* Adjust the vertical position */
+    left: 20%; /* Center the image horizontally */
+    transform: translate(-50%, -30%); /* Center and slightly offset */
+    z-index: 2; /* Ensure the image appears above other elements */
+    width: 800px; /* Adjust the size of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: circular effect */
+    pointer-events: none; /* Prevent the image from interfering with clicks */
+}
