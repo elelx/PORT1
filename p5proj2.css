@@ -26,3 +26,14 @@ body, html {
     background-position: center center;
 
 }
+
+#sketchbox {
+    position: relative; 
+
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border: 10px solid #ddd;
+    border-radius: 8px;
+}

@@ -1,5 +1,6 @@
 function setup() {
-  createCanvas(400, 400);
+  let myCanvas = createCanvas(400, 400)
+  myCanvas.parent("sketchbox");
 }
 
 //Fluffy, 3 feet 11 inches tall and white, is a very common animal but isn’t alive.I always sleep with he.

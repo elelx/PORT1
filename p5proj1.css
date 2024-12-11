@@ -17,6 +17,16 @@ color: white;
 }
 
 
+#rectangle{
+
+        width:100%;
+        height:60px;
+        background:#00f;
+        position:fixed;
+        top:0;
+        left:0;
+    
+}
 
 body, html {
     height: 100%; 
@@ -25,4 +35,15 @@ body, html {
     background-size: cover;
     background-position: center center;
 
+}
+
+#sketchbox {
+    position: relative; 
+
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border: 10px solid #ddd;
+    border-radius: 8px;
 }
