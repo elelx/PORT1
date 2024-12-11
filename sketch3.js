@@ -38,9 +38,10 @@ const incrementAmt =10;
 
 function setup() {
 
-  let myCanvas = createCanvas( 600, 600);
-  myCanvas.parent ("sketchbook");
-  
+
+  let myCanvas = createCanvas(600, 600)
+  myCanvas.parent("sketchbox");
+
   angleMode(DEGREES); //this helps so its in degrees and not radians so I am able to just wrtie 90, 180, 270, eetc.
       
   //inital sizes
