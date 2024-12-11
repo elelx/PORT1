@@ -241,8 +241,10 @@ function startTimer(){
 
 
 function setup() {
-  createCanvas(600, 400).parent("sketchbox");
-  myCanvas
+  let myCanvas = createCanvas(600, 400)
+  myCanvas.parent("sketchbox");
+   
+  
   
  bgmusic.loop(); 
   bgmusic.setVolume(0.5);
