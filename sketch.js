@@ -209,7 +209,7 @@ function preload(){
  squishSound = loadSound('Audio/cartoon-slap-2-189831.mp3');
 bgmusic = loadSound('Audio/Rugrats Theme [8 Bit Tribute to Rugrats] - 8 Bit Universe.mp3');
   buttonClick = loadSound('Audio/button-124476.mp3');
-  winScene = loadSound('Audio/Cartoon Sound Effects 100% Best 061.wav');
+  winScene = loadSound('Audio/CartoonSound.wav');
   ewSound = loadSound('Audio/Crowd of Children Saying Eww.mp3')
   kissSound = loadSound('Audio/kisspop3wav-14505.mp3')
 }
