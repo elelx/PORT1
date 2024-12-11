@@ -153,7 +153,8 @@ function preload(){
   manSpray = loadImage('Images/ManSpray.png');
   manSwat = loadImage('Images/ManSwat.png');
   cockraoch = loadImage('Images/CockRoach.png');
-  roach = loadImage('Images/Roach.png'); roachImage = loadImage('Images/Roach.png');
+  roach = loadImage('Images/Roach.png'); 
+  roachImage = loadImage('Images/Roach.png');
   blood = loadImage('Images/blood.png');
   intro = loadImage('Images/intro.jpg');
   shocktext = loadImage('Images/ShockBubble.png');
