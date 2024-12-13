@@ -1,8 +1,8 @@
 let img;
 let brushShape = "square"; 
-let brushColor = [0, 0, 0]; // Initial color is black
+let brushColor = [0, 0, 0]; 
 const brushSize = 10; 
-const size1 = 45; // Size of each color square
+const size1 = 45; 
 const size2 = 45;
 function preload() {
   img = loadImage('img/dino.png'); 
@@ -12,7 +12,7 @@ function setup() {
   let myCanvas = createCanvas(400, 500);
 myCanvas.parent ("sketchbox");
   background(255);
-  rectMode(CORNER); // Use CORNER mode for easier detection
+  rectMode(CORNER); 
   noStroke();
 
   imageMode(CENTER); 
@@ -39,7 +39,7 @@ function draw() {
 }
 
 function drawShape(x, y, px, py, type) {
-  fill(brushColor); // This will use the updated brush color
+  fill(brushColor); 
 
   if (type === "square") {
     for (let i = 0; i < 1; i += 0.1) {
@@ -108,36 +108,24 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  console.log(`MousePressed: (${mouseX}, ${mouseY})`); // Log to debug the mouse position
+  console.log(`MousePressed: (${mouseX}, ${mouseY})`); 
 
-  // Check if mouse is inside the White block
   if (mouseX > 30 && mouseX < 30 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
     brushColor = [255, 255, 255]; // White
-    console.log("Color changed to White");
   } 
-  // Check if mouse is inside the Black block
   else if (mouseX > 90 && mouseX < 90 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
     brushColor = [0, 0, 0]; // Black
-    console.log("Color changed to Black");
   } 
-  // Check if mouse is inside the Green block
   else if (mouseX > 150 && mouseX < 150 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
     brushColor = [100, 255, 100]; // Green
-    console.log("Color changed to Green");
   } 
-  // Check if mouse is inside the Blue block
   else if (mouseX > 210 && mouseX < 210 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
     brushColor = [130, 226, 237]; // Blue
-    console.log("Color changed to Blue");
   } 
-  // Check if mouse is inside the Purple block
   else if (mouseX > 270 && mouseX < 270 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
     brushColor = [207, 130, 237]; // Purple
-    console.log("Color changed to Purple");
   } 
-  // Check if mouse is inside the Pink block
   else if (mouseX > 330 && mouseX < 330 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
     brushColor = [255, 192, 203]; // Pink
-    console.log("Color changed to Pink");
   }
 }
