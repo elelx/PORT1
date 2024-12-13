@@ -5,9 +5,8 @@ const brushSize = 10; // Brush size
 let size = 30; // Default palette size
 
 function setup() {
-  let myCanvas = createCanvas(400, 500)
-  myCanvas.parent("sketchbox");
-
+  let myCanvas = createCanvas(400, 500);
+  myCanvas.parent("sketchbox"); // Attach canvas to 'sketchbox' div
   background(255);
   rectMode(CENTER);
   noStroke();
@@ -20,7 +19,7 @@ function draw() {
   }
 
   push();
-  fill('grey');
+  fill(254, 96, 118);
   rect(0, 10, 800, 100);
   pop();
 
