@@ -7,30 +7,23 @@ body, html {
     background-attachment: fixed;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 }
 
-
 #sketchbox {
     position: relative;
-
-    width: 400px;
-    height: 500px;
-    margin: 20px auto;
-
-
+    width: 100%; /* Adjust width as a percentage */
+    height: auto; /* Let height adjust according to the width */
 }
 
 #overlap {
     display: flex;
-
     position: absolute;
-    top: 40px;
+    top: 5%;
     left: 50%;
     transform: translate(-50%);
-    width: 800px;
+    width: 49%; /* Use percentage */
     z-index: 10;
     opacity: 100; 
     pointer-events: none;
@@ -38,12 +31,11 @@ body, html {
 
 #botOverLap {
     display: flex;
-
     position: absolute;
-    top: 600px;
+    top: 67%;
     left: 50%;
     transform: translate(-50%);
-    width: 700px;
+    width: 30%; /* Use percentage */
     z-index: 10;
     opacity: 100; 
     pointer-events: none;
@@ -51,31 +43,63 @@ body, html {
 
 #pencil {
     display: flex;
-
     position: absolute;
-    top: 100px;
-    left: 23%;
+    top: 15%;
+    left: 28%;
     transform: translate(-50%);
-    width: 350px;
+    width: 19%; /* Use percentage */
     z-index: 10;
-
 }
 
 #dino {
-    
-        position: absolute; 
-        top: 320px;
-        left: 50%; 
-        transform: translateX(-50%); 
-        width: 300px; 
-        z-index: 10; 
-        transition: opacity 0.3s ease; 
-
-
-    
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 20%; /* Use percentage */
+    z-index: 10; 
+    transition: opacity 0.3s ease; 
 }
 
 #dino:hover {
     opacity: 0; 
     pointer-events: none;
+}
+
+#enter {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 76%; /* Center the button horizontally */
+    transform: translateX(-50%);
+    width: 15%; /* Adjust width as a percentage */
+    z-index: 10;
+    opacity: 100; 
+    pointer-events: auto; /* Allow interaction */
+}
+
+@media (max-width: 768px) {
+    #sketchbox {
+        width: 80%;
+    }
+
+    #overlap, #botOverLap {
+        width: 80%; /* Make the images smaller on smaller screens */
+    }
+
+    #pencil {
+        left: 13%;
+        top: 35%;
+        width: 20%; /* Make the pencil smaller */
+    }
+
+    #dino {
+        width: 40%; /* Reduce size on smaller screens */
+    }
+
+    #enter {
+        left: 95%;
+        top: 45%;
+        width: 10%; /* Adjust button size */
+    }
 }
