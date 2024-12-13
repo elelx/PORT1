@@ -11,10 +11,11 @@ body, html {
     align-items: center;
 }
 
+
 #sketchbox {
     position: relative;
-    width: 100%; /* Adjust width as a percentage */
-    height: auto; /* Let height adjust according to the width */
+    width: 100%; 
+    height: auto; 
 }
 
 #overlap {
@@ -23,10 +24,14 @@ body, html {
     top: 5%;
     left: 50%;
     transform: translate(-50%);
-    width: 49%; /* Use percentage */
+    width: 49%; 
     z-index: 10;
     opacity: 100; 
-    pointer-events: none;
+    pointer-events: auto;
+}
+
+#overlap:hover {
+    transform: translate(-50%, -10%) scale(1.2);
 }
 
 #botOverLap {
@@ -35,11 +40,15 @@ body, html {
     top: 67%;
     left: 50%;
     transform: translate(-50%);
-    width: 30%; /* Use percentage */
+    width: 30%; 
     z-index: 10;
     opacity: 100; 
-    pointer-events: none;
+    pointer-events: auto;
 }
+
+#botOverLap:hover {
+    transform: translate(-50%, 10%) scale(1.2);
+} 
 
 #pencil {
     display: flex;
@@ -47,16 +56,22 @@ body, html {
     top: 15%;
     left: 28%;
     transform: translate(-50%);
-    width: 19%; /* Use percentage */
+    width: 19%; 
     z-index: 10;
+    pointer-events: auto;
+
 }
+
+#pencil:hover {
+    transform: translate(-50%, 10%) scale(1.2);
+} 
 
 #dino {
     position: absolute; 
     top: 50%;
     left: 50%; 
     transform: translateX(-50%); 
-    width: 20%; /* Use percentage */
+    width: 20%; 
     z-index: 10; 
     transition: opacity 0.3s ease; 
 }
@@ -70,13 +85,18 @@ body, html {
     display: flex;
     position: absolute;
     top: 40%;
-    left: 76%; /* Center the button horizontally */
+    left: 76%; 
     transform: translateX(-50%);
-    width: 15%; /* Adjust width as a percentage */
+    width: 15%; 
     z-index: 10;
     opacity: 100; 
-    pointer-events: auto; /* Allow interaction */
+    pointer-events: auto; 
 }
+
+#enter:hover {
+    transform: translate(-50%, -5%) scale(1.2);
+}
+
 
 @media (max-width: 768px) {
     #sketchbox {
@@ -84,22 +104,22 @@ body, html {
     }
 
     #overlap, #botOverLap {
-        width: 80%; /* Make the images smaller on smaller screens */
+        width: 80%; 
     }
 
     #pencil {
         left: 13%;
         top: 35%;
-        width: 20%; /* Make the pencil smaller */
+        width: 20%;
     }
 
     #dino {
-        width: 40%; /* Reduce size on smaller screens */
+        width: 40%; 
     }
 
     #enter {
         left: 95%;
         top: 45%;
-        width: 10%; /* Adjust button size */
+        width: 10%; 
     }
 }
