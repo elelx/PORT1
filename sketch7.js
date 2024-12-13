@@ -1,36 +1,45 @@
-let brushShape = "square"; // Default shape
-let brushColor = [0, 0, 0]; // Default color (black)
-const brushSize = 10; // Brush size
-
-let size = 30; // Default palette size
+let img;
+let brushShape = "square"; 
+let brushColor = [0, 0, 0]; // Initial color is black
+const brushSize = 10; 
+const size1 = 45; // Size of each color square
+const size2 = 45;
+function preload() {
+  img = loadImage('img/dino.png'); 
+}
 
 function setup() {
-  createCanvas(400, 500);
+  let myCanvas = createCanvas(400, 500);
+myCanvas.parent ("sketchbox");
   background(255);
-  rectMode(CENTER);
+  rectMode(CORNER); // Use CORNER mode for easier detection
   noStroke();
+
+  imageMode(CENTER); 
+  image(img, width / 2, height / 2, 300, 250);
 }
 
 function draw() {
-  // Continuously draw shapes along the mouse path when the mouse is pressed
   if (mouseIsPressed) {
     drawShape(mouseX, mouseY, pmouseX, pmouseY, brushShape);
   }
 
   push();
-  fill(254, 96, 118);
-  rect(0, 10, 800, 100);
+  fill('#fe6076');
+  rect(0, 0, 400, 110);
+  rect(0, 400, 800, 110);
   pop();
 
-  // Handle hover effects for the palette
-  mouseHover();
-
-  // Draw the color palette
+    fill(0);
+  textSize(16);
+    textFont('Courier New', 10);
+  text("click to draw, space to clear", 120, 390);
+   
   drawPalette();
 }
 
 function drawShape(x, y, px, py, type) {
-  fill(brushColor); // Set the current brush color
+  fill(brushColor); // This will use the updated brush color
 
   if (type === "square") {
     for (let i = 0; i < 1; i += 0.1) {
@@ -53,27 +62,27 @@ function drawPalette() {
 
   // White
   fill(255);
-  square(50, 28, size);
+  rect(30, 50, size1, size2);
 
   // Black
   fill(0);
-  square(100, 28, size);
+  rect(90, 50, size1, size2);
 
   // Green
   fill(100, 255, 100);
-  square(150, 28, size);
+  rect(150, 50, size1, size2);
 
   // Blue
   fill(130, 226, 237);
-  square(200, 28, size);
+  rect(210, 50, size1, size2);
 
   // Purple
   fill(207, 130, 237);
-  square(250, 28, size);
+  rect(270, 50, size1, size2);
 
   // Pink
   fill('pink');
-  square(300, 28, size);
+  rect(330, 50, size1, size2);
 
   pop();
 }
@@ -99,42 +108,36 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  // Check if a palette square is clicked
-  if (mouseY > 15 && mouseY < 45) { // Adjusted Y range for the palette
-    if (mouseX > 35 && mouseX < 65) { // White
-      brushColor = [255, 255, 255];
-    } else if (mouseX > 85 && mouseX < 115) { // Black
-      brushColor = [0, 0, 0];
-    } else if (mouseX > 135 && mouseX < 165) { // Green
-      brushColor = [100, 255, 100];
-    } else if (mouseX > 185 && mouseX < 215) { // Blue
-      brushColor = [130, 226, 237];
-    } else if (mouseX > 235 && mouseX < 265) { // Purple
-      brushColor = [207, 130, 237];
-    } else if (mouseX > 285 && mouseX < 315) { // Pink
-      brushColor = [255, 192, 203];
-    }
-  }
-}
+  console.log(`MousePressed: (${mouseX}, ${mouseY})`); // Log to debug the mouse position
 
-function mouseHover() {
-  // Reset the size of all squares to the default size
-  size = 30;
-
-  // Check if hovering over a specific palette square
-  if (mouseY > 15 && mouseY < 45) { // Adjusted Y range for the palette
-    if (mouseX > 35 && mouseX < 65) { // White
-      size = 40;
-    } else if (mouseX > 85 && mouseX < 115) { // Black
-      size = 40;
-    } else if (mouseX > 135 && mouseX < 165) { // Green
-      size = 40;
-    } else if (mouseX > 185 && mouseX < 215) { // Blue
-      size = 40;
-    } else if (mouseX > 235 && mouseX < 265) { // Purple
-      size = 40;
-    } else if (mouseX > 285 && mouseX < 315) { // Pink
-      size = 40;
-    }
+  // Check if mouse is inside the White block
+  if (mouseX > 30 && mouseX < 30 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
+    brushColor = [255, 255, 255]; // White
+    console.log("Color changed to White");
+  } 
+  // Check if mouse is inside the Black block
+  else if (mouseX > 90 && mouseX < 90 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
+    brushColor = [0, 0, 0]; // Black
+    console.log("Color changed to Black");
+  } 
+  // Check if mouse is inside the Green block
+  else if (mouseX > 150 && mouseX < 150 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
+    brushColor = [100, 255, 100]; // Green
+    console.log("Color changed to Green");
+  } 
+  // Check if mouse is inside the Blue block
+  else if (mouseX > 210 && mouseX < 210 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
+    brushColor = [130, 226, 237]; // Blue
+    console.log("Color changed to Blue");
+  } 
+  // Check if mouse is inside the Purple block
+  else if (mouseX > 270 && mouseX < 270 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
+    brushColor = [207, 130, 237]; // Purple
+    console.log("Color changed to Purple");
+  } 
+  // Check if mouse is inside the Pink block
+  else if (mouseX > 330 && mouseX < 330 + size1 && mouseY > 50 && mouseY < 50 + size2) { 
+    brushColor = [255, 192, 203]; // Pink
+    console.log("Color changed to Pink");
   }
 }
